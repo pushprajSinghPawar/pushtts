@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: antiquewhite;
+            padding: 20px;
+            margin: 0;
+        }
+
+        .wrapper {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            /* Necessary for blood spots on wrapper */
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"] {
+            width: calc(100% - 10px);
+            padding: 5px;
+            font-family: 'Times New Roman', Times, serif;
+            border: 1px solid #ccc;
+        }
+
+        input[type="submit"] {
+            padding: 5px 10px;
+            font-family: 'Times New Roman', Times, serif;
+            background-color: antiquewhite;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+
+        audio {
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        h1,
+        h2 {
+            font-family: 'Times New Roman', Times, serif;
+            color: #333;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>
+        {{text}}
+    </h1>
+    <audio controls autoplay>
+        {% if audio_file %}
+        <source src="static/eng.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+        {% else %}
+        <p>No audio available.</p>
+        {% endif %}
+    </audio>
+</body>
+</html>
